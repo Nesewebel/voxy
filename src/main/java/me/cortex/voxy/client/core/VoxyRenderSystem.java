@@ -125,7 +125,7 @@ public class VoxyRenderSystem {
         return base.mulLocal(
                 makeProjectionMatrix(0.05f, MinecraftClient.getInstance().gameRenderer.getFarPlaneDistance()).invert(),
                 new Matrix4f()
-        ).mulLocal(makeProjectionMatrix(16, 16*3000));
+        ).mulLocal(makeProjectionMatrix(16, 16*9000));
     }
 
     public void renderOpaque(ChunkRenderMatrices matrices, FogParameters fogParameters, double cameraX, double cameraY, double cameraZ) {

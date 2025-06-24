@@ -116,7 +116,7 @@ public abstract class VoxyConfigScreenPages {
                 ).add(OptionImpl.createBuilder(int.class, storage)
                         .setName(Text.translatable("voxy.config.general.renderDistance"))
                         .setTooltip(Text.translatable("voxy.config.general.renderDistance.tooltip"))
-                        .setControl(opt->new SliderControl(opt, 2, 64, 1, v->Text.literal(Integer.toString(v * 32))))//Every unit is equal to 32 vanilla chunks
+                        .setControl(opt->new SliderControl(opt, 2, 256, 1, v->Text.literal(Integer.toString(v * 32))))//Every unit is equal to 32 vanilla chunks
                         .setBinding((s, v)-> {
                             s.sectionRenderDistance = v;
                             var vrsh = (IGetVoxyRenderSystem)MinecraftClient.getInstance().worldRenderer;
@@ -157,7 +157,7 @@ public abstract class VoxyConfigScreenPages {
 
     private static final int SUBDIV_IN_MAX = 100;
     private static final double SUBDIV_MIN = 28;
-    private static final double SUBDIV_MAX = 256;
+    private static final double SUBDIV_MAX = 1024;
     private static final double SUBDIV_CONST = Math.log(SUBDIV_MAX/SUBDIV_MIN)/Math.log(2);
 
 
